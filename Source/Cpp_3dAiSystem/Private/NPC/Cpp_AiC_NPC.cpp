@@ -5,6 +5,7 @@
 #include "./NPC/Cpp_NPC.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "Perception/AISenseConfig_Sight.h"
 
 ACpp_AiC_NPC::ACpp_AiC_NPC(FObjectInitializer const& ObjectInitializer) {
 
@@ -21,4 +22,12 @@ void ACpp_AiC_NPC::OnPossess(APawn* InPawn) {
 			RunBehaviorTree(BT);
 		}
 	}
+}
+
+void ACpp_AiC_NPC::SetupPerceptionSystem() {
+
+}
+
+void ACpp_AiC_NPC::OnTargetDetected(AActor* Actor, FAIStimulus const Stimulus) {
+
 }
