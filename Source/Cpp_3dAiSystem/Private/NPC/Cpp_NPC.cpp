@@ -11,24 +11,24 @@ ACpp_NPC::ACpp_NPC()
 
 }
 
-// Called when the game starts or when spawned
+
 void ACpp_NPC::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
-
-// Called every frame
 void ACpp_NPC::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
-
-// Called to bind functionality to input
 void ACpp_NPC::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+UBehaviorTree* ACpp_NPC::GetBehaviorTree() const {
+	return BT_Brain;
 }
 
