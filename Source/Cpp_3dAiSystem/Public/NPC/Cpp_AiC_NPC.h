@@ -6,12 +6,17 @@
 #include "AIController.h"
 #include "Cpp_AiC_NPC.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class CPP_3DAISYSTEM_API ACpp_AiC_NPC : public AAIController
 {
 	GENERATED_BODY()
-	
+
+public:
+	explicit ACpp_AiC_NPC(FObjectInitializer const& ObjectInitializer);
+
+
+protected:
+	virtual void OnPossess(APawn* InPawn) override;
+
 };
