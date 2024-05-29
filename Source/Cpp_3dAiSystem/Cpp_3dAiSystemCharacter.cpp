@@ -13,8 +13,7 @@
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
-//////////////////////////////////////////////////////////////////////////
-// ACpp_3dAiSystemCharacter
+
 
 ACpp_3dAiSystemCharacter::ACpp_3dAiSystemCharacter()
 {
@@ -58,10 +57,14 @@ void ACpp_3dAiSystemCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+	
+	APlayerCameraManager* const CameraManager = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
+	if (CameraManager) {
+		CameraManager->ViewPitchMin = -50.0f;
+		CameraManager->ViewPitchMax = 10.0f;
+	}
+	
 }
-
-//////////////////////////////////////////////////////////////////////////
-// Input
 
 void ACpp_3dAiSystemCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -86,6 +89,9 @@ void ACpp_3dAiSystemCharacter::SetupPlayerInputComponent(UInputComponent* Player
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ACpp_3dAiSystemCharacter::Look);
+
+		// Exit Game
+		EnhancedInputComponent->BindAction(ExitAction, ETriggerEvent::Triggered, this, &ACpp_3dAiSystemCharacter::ExitGame);
 	}
 	else
 	{
@@ -127,4 +133,8 @@ void ACpp_3dAiSystemCharacter::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void ACpp_3dAiSystemCharacter::ExitGame() {
+	GetWorld()->GetFirstPlayerController()->ConsoleCommand("quit");
 }

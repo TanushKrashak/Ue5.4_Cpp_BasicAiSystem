@@ -20,6 +20,11 @@ class ACpp_3dAiSystemCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+protected:
+	//===================================================================================================
+	// PROPERTIES & VARIABLES
+	//===================================================================================================
+
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;
@@ -44,27 +49,34 @@ class ACpp_3dAiSystemCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
-public:
-	ACpp_3dAiSystemCharacter();
+	/** Exit Game Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ExitAction;
+
 	
-
-protected:
-
-	/** Called for movement input */
-	void Move(const FInputActionValue& Value);
-
-	/** Called for looking input */
-	void Look(const FInputActionValue& Value);
-			
-
-protected:
-	// APawn interface
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
-	// To add mapping context
+	//===================================================================================================
+	// FUNCTIONS	
+	//===================================================================================================
+		
 	virtual void BeginPlay();
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
+
+	void ExitGame();
 
 public:
+	//===================================================================================================
+	// PROPERTIES & VARIABLES
+	//===================================================================================================
+
+
+
+	//===================================================================================================
+	// FUNCTIONS
+	//===================================================================================================
+	ACpp_3dAiSystemCharacter();
+
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
