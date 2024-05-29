@@ -2,6 +2,7 @@
 
 
 #include "NPC/Cpp_NPC.h"
+#include "BehaviorTree/BehaviorTree.h"
 
 // Sets default values
 ACpp_NPC::ACpp_NPC()
@@ -29,6 +30,6 @@ void ACpp_NPC::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 
 UBehaviorTree* ACpp_NPC::GetBehaviorTree() const {
+	
 	return BT_Brain;
 }
-

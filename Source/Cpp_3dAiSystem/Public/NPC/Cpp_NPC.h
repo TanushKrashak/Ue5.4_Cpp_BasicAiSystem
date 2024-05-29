@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "Cpp_NPC.generated.h"
 
+class UBehaviorTree;
+
 UCLASS()
 class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter
 {
