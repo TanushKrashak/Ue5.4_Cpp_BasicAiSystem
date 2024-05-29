@@ -7,7 +7,7 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Perception/AISenseConfig_Sight.h"
 #include "Perception/AIPerceptionComponent.h"
-#include "Cpp_3dAiSystemCharacter.h"
+#include "../Cpp_3dAiSystemCharacter.h"
 
 ACpp_AiC_NPC::ACpp_AiC_NPC(FObjectInitializer const& ObjectInitializer) {
 	SetupPerceptionSystem();
@@ -48,7 +48,7 @@ void ACpp_AiC_NPC::SetupPerceptionSystem() {
 }
 
 void ACpp_AiC_NPC::OnTargetDetected(AActor* Actor, FAIStimulus const Stimulus) {
-	if (const auto* Character = Cast<ACpp_3dAiSystemCharacter>(Actor)) {
+	if (const auto* PlayerCharacter = Cast<ACpp_3dAiSystemCharacter>(Actor)) {
 		GetBlackboardComponent()->SetValueAsBool("CanSeePlayer", Stimulus.WasSuccessfullySensed());
 	}
 }

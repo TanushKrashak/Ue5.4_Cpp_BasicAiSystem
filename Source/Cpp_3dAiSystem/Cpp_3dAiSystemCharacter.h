@@ -7,11 +7,13 @@
 #include "Logging/LogMacros.h"
 #include "Cpp_3dAiSystemCharacter.generated.h"
 
+// Forward Declarations
 class USpringArmComponent;
 class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
+class UAIPerceptionStimuliSourceComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
