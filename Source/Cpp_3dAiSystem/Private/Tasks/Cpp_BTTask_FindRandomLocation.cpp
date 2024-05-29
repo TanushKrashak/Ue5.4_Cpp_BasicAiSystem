@@ -4,13 +4,16 @@
 #include "Tasks/Cpp_BTTask_FindRandomLocation.h"
 #include "NPC/Cpp_AiC_NPC.h"
 #include "NavigationSystem.h"
+#include "BehaviorTree/BlackboardComponent.h"
+
+
 
 UCpp_BTTask_FindRandomLocation::UCpp_BTTask_FindRandomLocation(FObjectInitializer const& ObjectInitializer) {
 	// the NodeName is the name of the task that will be displayed in the Behavior Tree Editor
-	NodeName = TEXT("Find Random Location");
+	NodeName = "Find Random Location";
 }
 
-EBTNodeResult UCpp_BTTask_FindRandomLocation::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) {
+EBTNodeResult::Type UCpp_BTTask_FindRandomLocation::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) {
 	// get the AI controller and the controlled pawn
 	if (const auto* AiController = Cast<ACpp_AiC_NPC>(OwnerComp.GetAIOwner())) {
 		if (const auto* Npc = AiController->GetPawn()) {
