@@ -53,6 +53,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ExitAction;
 
+	class UAIPerceptionStimuliSourceComponent* StimuliSource;
 	
 	//===================================================================================================
 	// FUNCTIONS	
@@ -64,6 +65,8 @@ protected:
 	void Look(const FInputActionValue& Value);
 
 	void ExitGame();
+
+	void SetupStimulusSource();
 
 public:
 	//===================================================================================================
