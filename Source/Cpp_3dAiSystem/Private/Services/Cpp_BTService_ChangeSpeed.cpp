@@ -21,7 +21,7 @@ void UCpp_BTService_ChangeSpeed::OnBecomeRelevant(UBehaviorTreeComponent& OwnerC
 	if (const auto* AiCont = Cast<ACpp_AiC_NPC>(OwnerComp.GetAIOwner())) {
 		// Try to get the npc
 		if (const auto* npc = Cast<ACpp_NPC>(AiCont->GetPawn())) {
-			//npc->GetCharacterMovement()->MaxWalkSpeed = Speed;
+			npc->GetCharacterMovement()->MaxWalkSpeed = Speed;
 		}
 	}
 }
