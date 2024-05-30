@@ -35,6 +35,6 @@ UBehaviorTree* ACpp_NPC::GetBehaviorTree() const {
 	return BT_Brain;
 }
 
-ACpp_PatrolPath* ACpp_NPC::GetPatrolPath() {
+ACpp_PatrolPath* ACpp_NPC::GetPatrolPath() const {
 	return PatrolPath;
 }
