@@ -45,5 +45,5 @@ EBTNodeResult::Type UCpp_BTTask_MeleeAttack::ExecuteTask(UBehaviorTreeComponent&
 
 bool UCpp_BTTask_MeleeAttack::MontageHasFinished(const ACpp_NPC* npc) {
 	// check if montage is stopped
-	return npc->GetMesh()->GetAnimInstance()->Montage_GetIsStopped(npc->GetMontage());
+	return npc->GetMesh()->GetAnimInstance()->Montage_GetIsStopped(npc->GetAttackMontage());
 }
