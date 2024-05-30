@@ -4,7 +4,6 @@
 #include "NPC/Cpp_NPC.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "Actors/Cpp_PatrolPath.h"
-#include "./Interfaces/Cpp_CombatInterface.h"
 #include "Animation/AnimMontage.h"
 
 // Sets default values
@@ -49,4 +48,5 @@ int ACpp_NPC::MeleeAttack_Implementation() {
 	if (AttackMontage) {
 		PlayAnimMontage(AttackMontage);
 	}
+	return 0;
 }

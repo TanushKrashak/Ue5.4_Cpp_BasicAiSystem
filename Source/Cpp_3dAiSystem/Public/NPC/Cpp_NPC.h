@@ -4,12 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Interfaces/Cpp_Interface_Combat.h"
 #include "Cpp_NPC.generated.h"
 
 // Forward Declarations
 class UBehaviorTree;
 class ACpp_PatrolPath;
 class UAnimMontage;
+
 
 UCLASS()
 class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter, public ICpp_Interface_Combat
@@ -58,5 +60,7 @@ public:
 	ACpp_PatrolPath* GetPatrolPath() const;
 
 	UAnimMontage* GetAttackMontage() const;
+
+	int MeleeAttack_Implementation() override;
 
 };
