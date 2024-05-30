@@ -4,7 +4,7 @@
 #include "Services/Cpp_BTS_IsPlayerInMeleeRange.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "NPC/Cpp_NPC.h"
-#include "NPC/AiC_NPC.h"
+#include "NPC/Cpp_AiC_NPC.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
 #include "Engine/World.h"
