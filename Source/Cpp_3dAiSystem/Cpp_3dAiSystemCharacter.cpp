@@ -156,5 +156,7 @@ void ACpp_3dAiSystemCharacter::SetupStimulusSource() {
 }
 
 void ACpp_3dAiSystemCharacter::OnAttack() {
-
+	if (AttackMontage) {
+		PlayAnimMontage(AttackMontage);
+	}
 }
