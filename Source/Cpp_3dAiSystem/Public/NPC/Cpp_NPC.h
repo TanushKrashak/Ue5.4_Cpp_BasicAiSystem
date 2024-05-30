@@ -12,7 +12,7 @@ class ACpp_PatrolPath;
 class UAnimMontage;
 
 UCLASS()
-class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter
+class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter, public ICpp_Interface_Combat
 {
 	GENERATED_BODY()
 

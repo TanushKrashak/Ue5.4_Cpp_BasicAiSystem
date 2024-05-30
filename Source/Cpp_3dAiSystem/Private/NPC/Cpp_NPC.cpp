@@ -44,3 +44,9 @@ ACpp_PatrolPath* ACpp_NPC::GetPatrolPath() const {
 UAnimMontage* ACpp_NPC::GetAttackMontage() const {
 	return AttackMontage;
 }
+
+int ACpp_NPC::MeleeAttack_Implementation() {
+	if (AttackMontage) {
+		PlayAnimMontage(AttackMontage);
+	}
+}
