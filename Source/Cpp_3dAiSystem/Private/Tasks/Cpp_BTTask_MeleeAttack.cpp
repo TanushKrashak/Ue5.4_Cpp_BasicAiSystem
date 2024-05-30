@@ -20,7 +20,27 @@ UCpp_BTTask_MeleeAttack::UCpp_BTTask_MeleeAttack() {
 }
 
 EBTNodeResult::Type UCpp_BTTask_MeleeAttack::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) {
+	// check if in range
+	const auto* OutOfRange = !OwnerComp.GetBlackboardComponent()->GetValueAsBool(GetSelectedBlackboardKey());
+	if (OutOfRange) {
+		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
+		return EBTNodeResult::Succeeded;
+	}
 
+	// get npc's ai controller
+	const auto* AiCont = Cast<ACpp_AiC_NPC>(OwnerComp.GetAIOwner());
+	// get npc
+	const auto* npc = Cast<ACpp_NPC>(AiCont->GetPawn());
+
+	// try to get npc's combat interface
+	if (const auto ICombat = Cast<ICpp_Interface_Combat>(npc)) {
+		if (MontageHasFinished(npc)) {
+			ICombat->Execute_MeleeAttack(npc);
+		}
+	}
+	// finish task
+	FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
+	return EBTNodeResult::Succeeded;
 }
 
 bool UCpp_BTTask_MeleeAttack::MontageHasFinished(const ACpp_NPC* npc) {
