@@ -14,4 +14,10 @@ class CPP_3DAISYSTEM_API UCpp_BTTask_MeleeAttack : public UBTTask_BlackboardBase
 {
 	GENERATED_BODY()
 	
+public:
+	UCpp_BTTask_MeleeAttack();
+	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
+
+private:
+	bool MontageHasFinished(const ACpp_NPC* npc);
 };
