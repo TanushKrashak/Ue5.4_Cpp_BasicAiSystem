@@ -9,7 +9,8 @@
 #include "Actors/Cpp_PatrolPath.h"
 
 
-UCpp_BTTask_FindPathPoint::UCpp_BTTask_FindPathPoint(const FObjectInitializer& ObjectInitializer) {
+UCpp_BTTask_FindPathPoint::UCpp_BTTask_FindPathPoint(const FObjectInitializer& ObjectInitializer) : 
+	UBTTask_BlackboardBase{ObjectInitializer} {
 	// NodeName is the name of the task that will be displayed in the Behavior Tree Editor
 	NodeName = TEXT("Find Path Point");
 }

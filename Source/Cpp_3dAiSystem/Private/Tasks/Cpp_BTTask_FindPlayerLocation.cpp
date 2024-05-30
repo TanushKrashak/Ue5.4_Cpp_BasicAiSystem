@@ -9,7 +9,8 @@
 #include "GameFramework/Character.h"
 
 
-UCpp_BTTask_FindPlayerLocation::UCpp_BTTask_FindPlayerLocation(FObjectInitializer const& ObjectInitializer) {
+UCpp_BTTask_FindPlayerLocation::UCpp_BTTask_FindPlayerLocation(FObjectInitializer const& ObjectInitializer) : 
+	UBTTask_BlackboardBase{ObjectInitializer} {
 	// NodeName is the name of the task that will be displayed in the Behavior Tree Editor
 	NodeName = TEXT("Find Player Location");
 }

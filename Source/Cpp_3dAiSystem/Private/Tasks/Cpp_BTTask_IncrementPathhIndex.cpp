@@ -3,7 +3,7 @@
 
 #include "Tasks/Cpp_BTTask_IncrementPathhIndex.h"
 
-UCpp_BTTask_IncrementPathhIndex::UCpp_BTTask_IncrementPathhIndex(const FObjectInitializer& ObjectInitializer) {
+UCpp_BTTask_IncrementPathhIndex::UCpp_BTTask_IncrementPathhIndex(const FObjectInitializer& ObjectInitializer) : UBTTask_BlackboardBase{ObjectInitializer} {
 
 }
 

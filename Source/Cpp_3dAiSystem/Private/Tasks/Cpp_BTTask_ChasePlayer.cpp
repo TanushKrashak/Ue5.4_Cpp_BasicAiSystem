@@ -6,7 +6,8 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Blueprint/AIBlueprintHelperLibrary.h"
 
-UCpp_BTTask_ChasePlayer::UCpp_BTTask_ChasePlayer(const FObjectInitializer& ObjectInitializer) {
+UCpp_BTTask_ChasePlayer::UCpp_BTTask_ChasePlayer(const FObjectInitializer& ObjectInitializer) : 
+	UBTTask_BlackboardBase{ObjectInitializer} {
 	// NodeNames are names which are shown in the BehaviorTree Editor
 	NodeName = TEXT("Chase Player");
 }

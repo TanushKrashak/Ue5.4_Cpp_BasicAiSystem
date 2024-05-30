@@ -8,7 +8,8 @@
 
 
 
-UCpp_BTTask_FindRandomLocation::UCpp_BTTask_FindRandomLocation(FObjectInitializer const& ObjectInitializer) {
+UCpp_BTTask_FindRandomLocation::UCpp_BTTask_FindRandomLocation(FObjectInitializer const& ObjectInitializer) : 
+	UBTTask_BlackboardBase{ObjectInitializer} {
 	// the NodeName is the name of the task that will be displayed in the Behavior Tree Editor
 	NodeName = "Find Random Location";
 }
