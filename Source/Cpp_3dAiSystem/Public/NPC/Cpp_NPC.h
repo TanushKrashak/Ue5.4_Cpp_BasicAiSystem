@@ -49,4 +49,6 @@ public:
 
 	UBehaviorTree* GetBehaviorTree() const;
 
+	ACpp_PatrolPath* GetPatrolPath();
+
 };
