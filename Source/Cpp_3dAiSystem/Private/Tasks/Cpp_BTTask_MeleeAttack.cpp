@@ -35,6 +35,7 @@ EBTNodeResult::Type UCpp_BTTask_MeleeAttack::ExecuteTask(UBehaviorTreeComponent&
 	// try to get npc's combat interface
 	if (const auto ICombat = Cast<ICpp_Interface_Combat>(npc)) {
 		if (MontageHasFinished(npc)) {
+			// call melee attack through interface
 			ICombat->Execute_MeleeAttack(npc);
 		}
 	}

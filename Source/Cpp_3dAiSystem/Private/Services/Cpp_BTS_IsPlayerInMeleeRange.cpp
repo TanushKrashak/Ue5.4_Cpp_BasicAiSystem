@@ -16,6 +16,8 @@ UCpp_BTS_IsPlayerInMeleeRange::UCpp_BTS_IsPlayerInMeleeRange() {
 }
 
 void UCpp_BTS_IsPlayerInMeleeRange::OnBecomeRelevant(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) {
+	// Just print to see how many times this function is called
+	UE_LOG(LogTemp, Warning, TEXT("OnBecomeRelevant called FOR MELEE RANGE!"));
 	// get npc's ai controller
 	const auto* AiCont = Cast<ACpp_AiC_NPC>(OwnerComp.GetAIOwner());
 	// get npc
