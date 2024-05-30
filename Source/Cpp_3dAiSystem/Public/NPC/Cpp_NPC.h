@@ -7,6 +7,7 @@
 #include "Cpp_NPC.generated.h"
 
 class UBehaviorTree;
+class ACpp_PatrolPath;
 
 UCLASS()
 class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter
@@ -20,6 +21,10 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Ai", meta = (AllowPrivateAccess = true))
 	UBehaviorTree* BT_Brain;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ai", meta = (AllowPrivateAccess = true))
+	ACpp_PatrolPath* PatrolPath;
+
 
 	//===================================================================================================
 	// FUNCTIONS

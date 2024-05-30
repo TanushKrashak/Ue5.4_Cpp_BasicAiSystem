@@ -2,7 +2,8 @@
 
 
 #include "NPC/Cpp_NPC.h"
-#include "BehaviorTree/BehaviorTree.h"
+#include "BehaviorTree/BehaviorTree.h
+#include "Actors/Cpp_PatrolPath.h"
 
 // Sets default values
 ACpp_NPC::ACpp_NPC()
