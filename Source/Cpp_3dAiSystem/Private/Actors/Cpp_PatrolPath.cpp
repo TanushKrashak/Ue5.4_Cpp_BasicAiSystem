@@ -12,7 +12,7 @@ ACpp_PatrolPath::ACpp_PatrolPath()
 }
 
 FVector ACpp_PatrolPath::GetPatrolPoint(const int PointIndex) const {
-
+	return PatrolPoints[PointIndex];
 }
 
 int ACpp_PatrolPath::NumOfPoints() const {
