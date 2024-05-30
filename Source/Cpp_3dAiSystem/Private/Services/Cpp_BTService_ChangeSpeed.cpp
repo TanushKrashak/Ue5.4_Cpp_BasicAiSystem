@@ -4,6 +4,7 @@
 #include "Services/Cpp_BTService_ChangeSpeed.h"
 #include "NPC/Cpp_AiC_NPC.h"
 #include "NPC/Cpp_NPC.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 UCpp_BTService_ChangeSpeed::UCpp_BTService_ChangeSpeed() {
