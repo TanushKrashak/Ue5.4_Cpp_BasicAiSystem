@@ -55,6 +55,10 @@ protected:
 	/** Exit Game Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ExitAction;
+	
+	/** Attacking Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* AttackAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ai", meta = (AllowPrivateAccess = true))
 	UAnimMontage* AttackMontage;
@@ -73,6 +77,8 @@ protected:
 	void ExitGame();
 
 	void SetupStimulusSource();
+
+	void OnAttack();
 
 public:
 	//===================================================================================================

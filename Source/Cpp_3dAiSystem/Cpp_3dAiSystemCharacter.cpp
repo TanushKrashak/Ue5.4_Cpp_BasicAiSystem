@@ -96,7 +96,10 @@ void ACpp_3dAiSystemCharacter::SetupPlayerInputComponent(UInputComponent* Player
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ACpp_3dAiSystemCharacter::Look);
 
 		// Exit Game
-		EnhancedInputComponent->BindAction(ExitAction, ETriggerEvent::Triggered, this, &ACpp_3dAiSystemCharacter::ExitGame);
+		EnhancedInputComponent->BindAction(ExitAction, ETriggerEvent::Started, this, &ACpp_3dAiSystemCharacter::ExitGame);
+		
+		// Attacking
+		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Started, this, &ACpp_3dAiSystemCharacter::OnAttack);
 	}
 	else
 	{
