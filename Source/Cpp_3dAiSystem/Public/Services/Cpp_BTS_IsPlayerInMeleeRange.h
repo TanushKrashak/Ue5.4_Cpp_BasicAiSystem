@@ -14,4 +14,11 @@ class CPP_3DAISYSTEM_API UCpp_BTS_IsPlayerInMeleeRange : public UBTService_Black
 {
 	GENERATED_BODY()
 	
+public:
+	UCpp_BTS_IsPlayerInMeleeRange();
+	virtual void OnBecomeRelevant(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
+
+private:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ai", meta = (AllowPrivateAccess = true))
+	float MeleeRange = 250.0f;
 };
