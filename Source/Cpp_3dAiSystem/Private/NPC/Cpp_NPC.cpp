@@ -4,6 +4,8 @@
 #include "NPC/Cpp_NPC.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "Actors/Cpp_PatrolPath.h"
+#include "./Interfaces/Cpp_CombatInterface.h"
+#include "Animation/AnimMontage.h"
 
 // Sets default values
 ACpp_NPC::ACpp_NPC()
@@ -37,4 +39,8 @@ UBehaviorTree* ACpp_NPC::GetBehaviorTree() const {
 
 ACpp_PatrolPath* ACpp_NPC::GetPatrolPath() const {
 	return PatrolPath;
+}
+
+UAnimMontage* ACpp_NPC::GetAttackMontage() const {
+	return AttackMontage;
 }

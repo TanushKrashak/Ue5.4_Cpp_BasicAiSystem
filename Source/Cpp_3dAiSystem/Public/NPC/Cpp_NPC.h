@@ -9,7 +9,7 @@
 // Forward Declarations
 class UBehaviorTree;
 class ACpp_PatrolPath;
-
+class UAnimMontage;
 
 UCLASS()
 class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter
@@ -27,6 +27,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ai", meta = (AllowPrivateAccess = true))
 	ACpp_PatrolPath* PatrolPath;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ai", meta = (AllowPrivateAccess = true))
+	UAnimMontage* AttackMontage;
 
 	//===================================================================================================
 	// FUNCTIONS
@@ -54,5 +56,7 @@ public:
 	UBehaviorTree* GetBehaviorTree() const;
 
 	ACpp_PatrolPath* GetPatrolPath() const;
+
+	UAnimMontage* GetAttackMontage() const;
 
 };
