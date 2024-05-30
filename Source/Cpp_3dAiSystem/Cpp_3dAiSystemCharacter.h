@@ -14,6 +14,7 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 class UAIPerceptionStimuliSourceComponent;
+class UAnimMontage;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -54,6 +55,9 @@ protected:
 	/** Exit Game Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ExitAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ai", meta = (AllowPrivateAccess = true))
+	UAnimMontage* AttackMontage;
 
 	class UAIPerceptionStimuliSourceComponent* StimuliSource;
 	

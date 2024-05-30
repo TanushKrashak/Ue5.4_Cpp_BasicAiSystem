@@ -6,8 +6,10 @@
 #include "GameFramework/Character.h"
 #include "Cpp_NPC.generated.h"
 
+// Forward Declarations
 class UBehaviorTree;
 class ACpp_PatrolPath;
+
 
 UCLASS()
 class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter
@@ -24,7 +26,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ai", meta = (AllowPrivateAccess = true))
 	ACpp_PatrolPath* PatrolPath;
-
+	
 
 	//===================================================================================================
 	// FUNCTIONS
@@ -34,6 +36,8 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+
 
 
 public:	

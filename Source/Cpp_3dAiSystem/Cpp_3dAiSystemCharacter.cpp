@@ -12,6 +12,7 @@
 #include "InputActionValue.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
 #include "Perception/AISense_Sight.h"
+#include "Animation/AnimMontage.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -149,4 +150,8 @@ void ACpp_3dAiSystemCharacter::SetupStimulusSource() {
 		StimuliSource->RegisterForSense(TSubclassOf<UAISense_Sight>());
 		StimuliSource->RegisterWithPerceptionSystem();
 	}
+}
+
+void ACpp_3dAiSystemCharacter::OnAttack() {
+
 }
