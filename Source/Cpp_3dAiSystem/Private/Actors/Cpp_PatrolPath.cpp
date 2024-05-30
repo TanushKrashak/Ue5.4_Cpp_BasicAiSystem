@@ -7,21 +7,15 @@
 ACpp_PatrolPath::ACpp_PatrolPath()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 }
 
-// Called when the game starts or when spawned
-void ACpp_PatrolPath::BeginPlay()
-{
-	Super::BeginPlay();
-	
+FVector ACpp_PatrolPath::GetPatrolPoint(const int PointIndex) const {
+
 }
 
-// Called every frame
-void ACpp_PatrolPath::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+int ACpp_PatrolPath::NumOfPoints() const {
+	return PatrolPoints.Num();
 }
 
