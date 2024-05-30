@@ -21,7 +21,7 @@ EBTNodeResult::Type UCpp_BTTask_IncrementPathhIndex::ExecuteTask(UBehaviorTreeCo
 		// Try to get the npc
 		if (const auto* npc = Cast<ACpp_NPC>(AiCont->GetPawn())) {
 			// Try to get blackboard 
-			if (const auto* BlackBoardComp = OwnerComp.GetBlackboardComponent()) {
+			if (auto* BlackBoardComp = OwnerComp.GetBlackboardComponent()) {
 				// Get num of patrol points 
 				const auto NumOfPatrolPoints = npc->GetPatrolPath()->NumOfPoints();
 				const int MinIndex = 0;
