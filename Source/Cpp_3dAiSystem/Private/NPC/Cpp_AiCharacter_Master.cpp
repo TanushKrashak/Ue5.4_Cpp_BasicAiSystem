@@ -35,6 +35,7 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 											   FName("hand_rSocket"));
 		RightFistCollisionBox->SetRelativeLocation(FVector(-7.0f, 0.0f, 0.0f));
 		RightFistCollisionBox->SetCollisionProfileName("OverlapAll");
+		RightFistCollisionBox->SetBoxExtent(FVector(5.0f, 5.0f, 5.0f));
 	}
 }
 
