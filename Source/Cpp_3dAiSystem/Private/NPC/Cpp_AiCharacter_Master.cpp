@@ -65,7 +65,7 @@ void ACpp_AiCharacter_Master::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 void ACpp_AiCharacter_Master::OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, 
 												   UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, 
-												   const FHitResult& SweepResult) {
+												   const FHitResult& SweepResult) {	
 	// Do nothing if the other actor is self
 	if (OtherActor == this) {
 		return;
@@ -94,7 +94,7 @@ float ACpp_AiCharacter_Master::GetMaxHealth() const {
 }
 
 void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
-	Health = FMath::Clamp(newHealth, 0.0f, MaxHealth);
+	Health = newHealth;
 	// self died
 	if (Health <= 0.0f) {
 		// check if player died, if so, close the game
