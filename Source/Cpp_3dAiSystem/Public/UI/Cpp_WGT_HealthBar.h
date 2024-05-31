@@ -19,6 +19,6 @@ public:
 	void SetHealthBarPercentage(const float Percentage);
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true", BindWidget))
 	UProgressBar* PB_HealthBar;
 };

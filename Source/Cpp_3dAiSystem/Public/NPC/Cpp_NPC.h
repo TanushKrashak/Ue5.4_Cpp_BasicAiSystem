@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Interfaces/Cpp_Interface_Combat.h"
+#include "NPC/Cpp_AiCharacter_Master.h"
 #include "Cpp_NPC.generated.h"
 
 // Forward Declarations

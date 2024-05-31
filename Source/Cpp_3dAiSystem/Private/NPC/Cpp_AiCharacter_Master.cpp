@@ -3,13 +3,15 @@
 
 #include "NPC/Cpp_AiCharacter_Master.h"
 #include "Components/WidgetComponent.h"
+#include "UI/Cpp_WGT_HealthBar.h"
 
 ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	WidgetComponent{CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthValue"))};
-	Health{MaxHealth};
+	// Set up widget component
+	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponent"));
+	Health = MaxHealth;
 
 	if (WidgetComponent) {
 		WidgetComponent->SetupAttachment(RootComponent);
@@ -34,7 +36,7 @@ void ACpp_AiCharacter_Master::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	if (const auto widget = Cast<UCpp_WGT_HealthBar>(WidgetComponent->GetUserWidgetObject())) {
-		widget->SetHealthBarPercentage(Health / MaxHealth)
+		widget->SetHealthBarPercentage(Health / MaxHealth);
 	}
 
 }
@@ -45,7 +47,7 @@ void ACpp_AiCharacter_Master::SetupPlayerInputComponent(UInputComponent* PlayerI
 }
 
 float ACpp_AiCharacter_Master::GetHealth() const {
-	return Health
+	return Health;
 }
 
 float ACpp_AiCharacter_Master::GetMaxHealth() const {
