@@ -71,9 +71,11 @@ void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
 }
 
 void ACpp_AiCharacter_Master::AttackStart() {
-
+	RightFistCollisionBox->SetCollisionProfileName("Fist");
+	RightFistCollisionBox->SetNotifyRigidBodyCollision(true);
 }
 void ACpp_AiCharacter_Master::AttackEnd() {
-
+	RightFistCollisionBox->SetCollisionProfileName("Fist");
+	//RightFistCollisionBox->SetNotifyRigidBodyCollision(false);
 }
 
