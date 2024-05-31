@@ -56,6 +56,17 @@ protected:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-
-
+	// Overlap Begin & End Functions For Attacking
+	UFUNCTION()
+	void OnAttackBeginOverlap(const UPrimitiveComponent* OverlappedComponent, 
+							  const AActor* OtherActor, 
+							  const UPrimitiveComponent* OtherComp,
+							  const int32 OtherBodyIndex, 
+							  const bool bFromSweep, 
+							  const FHitResult& SweepResult);
+	UFUNCTION()
+	void OnAttackEndOverlap(const UPrimitiveComponent* OverlappedComponent,
+							const AActor* OtherActor,
+							const UPrimitiveComponent* OtherComp,
+							const int32 OtherBodyIndex);
 };
