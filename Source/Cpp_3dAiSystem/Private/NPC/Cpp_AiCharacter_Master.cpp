@@ -26,3 +26,15 @@ void ACpp_AiCharacter_Master::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 }
 
+float ACpp_AiCharacter_Master::GetHealth() const {
+
+}
+
+float ACpp_AiCharacter_Master::GetMaxHealth() const {
+
+}
+
+void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
+
+}
+
