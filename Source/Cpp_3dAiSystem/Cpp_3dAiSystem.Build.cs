@@ -16,7 +16,10 @@ public class Cpp_3dAiSystem : ModuleRules
 			"EnhancedInput",
 			"AIModule", 
 			"GameplayTasks", 
-			"NavigationSystem"
-		});
+			"NavigationSystem",
+            "UMG",
+            "Slate",
+            "SlateCore",
+        });
 	}
 }
