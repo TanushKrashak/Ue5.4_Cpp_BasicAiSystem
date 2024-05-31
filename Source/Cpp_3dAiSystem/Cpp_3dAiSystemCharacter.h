@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "NPC/Cpp_AiCharacter_Master.h"
 #include "Cpp_3dAiSystemCharacter.generated.h"
 
 // Forward Declarations
@@ -19,7 +20,7 @@ class UAnimMontage;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class ACpp_3dAiSystemCharacter : public ACharacter
+class ACpp_3dAiSystemCharacter : public ACpp_AiCharacter_Master
 {
 	GENERATED_BODY()
 

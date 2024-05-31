@@ -14,7 +14,7 @@ class UAnimMontage;
 
 
 UCLASS()
-class CPP_3DAISYSTEM_API ACpp_NPC : public ACharacter, public ICpp_Interface_Combat
+class CPP_3DAISYSTEM_API ACpp_NPC : public ACpp_AiCharacter_Master, public ICpp_Interface_Combat
 {
 	GENERATED_BODY()
 
