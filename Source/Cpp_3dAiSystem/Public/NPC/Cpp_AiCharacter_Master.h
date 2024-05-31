@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "Cpp_AiCharacter_Master.generated.h"
 
+// Forward Declarations
+class UWidgetComponent;
+
 UCLASS()
 class CPP_3DAISYSTEM_API ACpp_AiCharacter_Master : public ACharacter
 {
@@ -34,6 +37,7 @@ protected:
 	//===================================================================================================
 	// PROPERTIES & VARIABLES	
 	//===================================================================================================
+	UWidgetComponent* WidgetComponent;
 	const float MaxHealth = 100.0f;
 	float Health;
 			

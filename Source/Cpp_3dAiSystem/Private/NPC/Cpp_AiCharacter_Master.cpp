@@ -2,11 +2,26 @@
 
 
 #include "NPC/Cpp_AiCharacter_Master.h"
+#include "Components/WidgetComponent.h"
 
 ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	WidgetComponent{CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthValue"))};
+	Health{MaxHealth};
+
+	if (WidgetComponent) {
+		WidgetComponent->SetupAttachment(RootComponent);
+		WidgetComponent->SetWidgetSpace(EWidgetSpace::Screen);
+		WidgetComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 95.0f));
+
+		static ConstructorHelpers::FClassFinder<UUserWidget> HealthWidgetClassFinder(TEXT("UI/Cpp_WGT_HealthBar"));
+
+		if (HealthWidgetClassFinder.Succeeded()) {
+			WidgetComponent->SetWidgetClass(HealthWidgetClassFinder.Class);
+		}
+	}
 
 }
 
