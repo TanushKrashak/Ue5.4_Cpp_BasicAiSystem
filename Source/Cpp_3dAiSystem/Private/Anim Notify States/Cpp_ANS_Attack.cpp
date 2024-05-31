@@ -4,7 +4,12 @@
 #include "Anim Notify States/Cpp_ANS_Attack.h"
 
 void UCpp_ANS_Attack::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration) {
-
+	// Check if mesh and owner exist
+	if (MeshComp && MeshComp->GetOwner()) {
+		if (const ACpp_AiCharacter_Master* inChar = Cast<ACpp_AiCharacter_Master>(MeshComp->GetOwner())) {
+			inChar->AttackStart();
+		}
+	}
 }
 
 void UCpp_ANS_Attack::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) {
