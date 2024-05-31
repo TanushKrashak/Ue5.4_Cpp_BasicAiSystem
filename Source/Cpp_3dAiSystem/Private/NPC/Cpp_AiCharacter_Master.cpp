@@ -53,6 +53,6 @@ float ACpp_AiCharacter_Master::GetMaxHealth() const {
 }
 
 void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
-
+	Health = FMath::Clamp(newHealth, 0.0f, MaxHealth);
 }
 
