@@ -31,7 +31,7 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 	// Initialize RightFistCollisionBox
 	if (RightFistCollisionBox) {
 		// Attaching with snap to target
-		RightFistCollisionBox->SetupAttachment(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, 
+		RightFistCollisionBox->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, 
 											   FName("hand_rSocket"));
 		RightFistCollisionBox->SetRelativeLocation(FVector(-7.0f, 0.0f, 0.0f));
 		RightFistCollisionBox->SetCollisionProfileName("OverlapAll");
