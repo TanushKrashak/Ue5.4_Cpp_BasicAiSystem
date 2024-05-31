@@ -6,7 +6,7 @@
 #include "UI/Cpp_WGT_HealthBar.h"
 #include "Components/BoxComponent.h"
 #include "NPC/Cpp_NPC.h"
-#include "Cpp_3dAiSystemCharacter.h"
+#include "../Cpp_3dAiSystemCharacter.h"
 
 ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 {
@@ -63,23 +63,26 @@ void ACpp_AiCharacter_Master::SetupPlayerInputComponent(UInputComponent* PlayerI
 
 }
 
-void ACpp_AiCharacter_Master::OnAttackBeginOverlap(const UPrimitiveComponent* OverlappedComponent, const AActor* OtherActor, const UPrimitiveComponent* OtherComp, const int32 OtherBodyIndex, const bool bFromSweep, const FHitResult& SweepResult) {
+void ACpp_AiCharacter_Master::OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, 
+												   UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, 
+												   const FHitResult& SweepResult) {
 	// Do nothing if the other actor is self
 	if (OtherActor == this) {
 		return;
 	}
 	// Check if the other actor is an NPC and damage it
-	if (const auto* Enemy = Cast<ACpp_NPC>(OtherActor)) {
+	if (auto* Enemy = Cast<ACpp_NPC>(OtherActor)) {
 		// Decrease enemy health by 10%
 		Enemy->SetHealth(Enemy->GetHealth() - Enemy->GetMaxHealth()*0.1f);
 	}
 	// Check if the other actor is a player and damage it
-	if (const auto* Player = Cast<ACpp_3dAiSystemCharacter>(OtherActor)) {
+	if (auto* Player = Cast<ACpp_3dAiSystemCharacter>(OtherActor)) {
 		// Decrease player health by 5%
 		Player->SetHealth(Player->GetHealth() - Player->GetMaxHealth() * 0.05f);
 	}
 }
-void ACpp_AiCharacter_Master::OnAttackEndOverlap(const UPrimitiveComponent* OverlappedComponent, const AActor* OtherActor, const UPrimitiveComponent* OtherComp, const int32 OtherBodyIndex) {
+void ACpp_AiCharacter_Master::OnAttackEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, 
+												 UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {
 
 }
 
@@ -104,7 +107,6 @@ void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
 			UE_LOG(LogTemp, Warning, TEXT("NPC Died!"));
 			Destroy();
 		}
-
 	}
 }
 
