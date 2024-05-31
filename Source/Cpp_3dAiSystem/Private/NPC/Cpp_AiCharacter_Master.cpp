@@ -17,7 +17,7 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 		WidgetComponent->SetupAttachment(RootComponent);
 		WidgetComponent->SetWidgetSpace(EWidgetSpace::Screen);
 		WidgetComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 95.0f));		
-		static ConstructorHelpers::FClassFinder<UUserWidget> HealthWidgetClassFinder(TEXT("/Game/UI/WBP_HealthBar.WBP_HealthBar"));
+		static ConstructorHelpers::FClassFinder<UUserWidget> HealthWidgetClassFinder(TEXT("/Game/UI/WBP_HealthBar"));
 
 		if (HealthWidgetClassFinder.Succeeded()) {
 			WidgetComponent->SetWidgetClass(HealthWidgetClassFinder.Class);
