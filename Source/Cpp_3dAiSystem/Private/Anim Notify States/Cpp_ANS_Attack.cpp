@@ -2,6 +2,8 @@
 
 
 #include "Anim Notify States/Cpp_ANS_Attack.h"
+#include "NPC/Cpp_AiCharacter_Master.h"
+
 
 void UCpp_ANS_Attack::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration) {
 	// Check if mesh and owner exist

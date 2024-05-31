@@ -62,12 +62,18 @@ void ACpp_AiCharacter_Master::SetupPlayerInputComponent(UInputComponent* PlayerI
 float ACpp_AiCharacter_Master::GetHealth() const {
 	return Health;
 }
-
 float ACpp_AiCharacter_Master::GetMaxHealth() const {
 	return MaxHealth;
 }
 
 void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
 	Health = FMath::Clamp(newHealth, 0.0f, MaxHealth);
+}
+
+void ACpp_AiCharacter_Master::AttackStart() {
+
+}
+void ACpp_AiCharacter_Master::AttackEnd() {
+
 }
 

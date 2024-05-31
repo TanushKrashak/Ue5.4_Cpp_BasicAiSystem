@@ -33,6 +33,9 @@ public:
 	// Setters
 	void SetHealth(const float newHealth);
 
+	void AttackStart();
+	void AttackEnd();
+
 protected:
 	//===================================================================================================
 	// PROPERTIES & VARIABLES	
