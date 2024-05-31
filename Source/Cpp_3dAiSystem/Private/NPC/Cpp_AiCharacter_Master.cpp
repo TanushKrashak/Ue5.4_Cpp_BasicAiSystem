@@ -76,6 +76,6 @@ void ACpp_AiCharacter_Master::AttackStart() {
 }
 void ACpp_AiCharacter_Master::AttackEnd() {
 	RightFistCollisionBox->SetCollisionProfileName("Fist");
-	//RightFistCollisionBox->SetNotifyRigidBodyCollision(false);
+	RightFistCollisionBox->SetNotifyRigidBodyCollision(false);
 }
 
