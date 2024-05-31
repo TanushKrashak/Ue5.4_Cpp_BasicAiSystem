@@ -16,6 +16,7 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 	RightFistCollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("RightFistCollisionBox"));
 	Health = MaxHealth;
 
+	// Initialize WidgetComponent
 	if (WidgetComponent) {
 		WidgetComponent->SetupAttachment(RootComponent);
 		WidgetComponent->SetWidgetSpace(EWidgetSpace::Screen);
@@ -27,6 +28,14 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 		}
 	}
 
+	// Initialize RightFistCollisionBox
+	if (RightFistCollisionBox) {
+		// Attaching with snap to target
+		RightFistCollisionBox->SetupAttachment(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, 
+											   FName("hand_rSocket"));
+		RightFistCollisionBox->SetRelativeLocation(FVector(-7.0f, 0.0f, 0.0f));
+		RightFistCollisionBox->SetCollisionProfileName("OverlapAll");
+	}
 }
 
 void ACpp_AiCharacter_Master::BeginPlay()
