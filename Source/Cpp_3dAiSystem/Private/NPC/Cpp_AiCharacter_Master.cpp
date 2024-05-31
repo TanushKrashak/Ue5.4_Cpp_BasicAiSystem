@@ -14,9 +14,8 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 	if (WidgetComponent) {
 		WidgetComponent->SetupAttachment(RootComponent);
 		WidgetComponent->SetWidgetSpace(EWidgetSpace::Screen);
-		WidgetComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 95.0f));
-
-		static ConstructorHelpers::FClassFinder<UUserWidget> HealthWidgetClassFinder(TEXT("UI/Cpp_WGT_HealthBar"));
+		WidgetComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 95.0f));		
+		static ConstructorHelpers::FClassFinder<UUserWidget> HealthWidgetClassFinder(TEXT("/Game/UI/WBP_HealthBar.WBP_HealthBar"));
 
 		if (HealthWidgetClassFinder.Succeeded()) {
 			WidgetComponent->SetWidgetClass(HealthWidgetClassFinder.Class);
@@ -33,6 +32,10 @@ void ACpp_AiCharacter_Master::BeginPlay()
 void ACpp_AiCharacter_Master::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (const auto widget = Cast<UCpp_WGT_HealthBar>(WidgetComponent->GetUserWidgetObject())) {
+		widget->SetHealthBarPercentage(Health / MaxHealth)
+	}
 
 }
 void ACpp_AiCharacter_Master::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
