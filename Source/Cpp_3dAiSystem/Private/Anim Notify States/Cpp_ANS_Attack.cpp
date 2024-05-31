@@ -13,5 +13,10 @@ void UCpp_ANS_Attack::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenc
 }
 
 void UCpp_ANS_Attack::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) {
-
+	// Check if mesh and owner exist
+	if (MeshComp && MeshComp->GetOwner()) {
+		if (const ACpp_AiCharacter_Master* inChar = Cast<ACpp_AiCharacter_Master>(MeshComp->GetOwner())) {
+			inChar->AttackEnd();
+		}
+	}
 }
