@@ -44,7 +44,9 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 void ACpp_AiCharacter_Master::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	// Bind the overlap functions to the collision box, so that we can detect when the player is hit
+	RightFistCollisionBox->OnComponentBeginOverlap.AddDynamic(this, &ACpp_AiCharacter_Master::OnAttackBeginOverlap);
+	RightFistCollisionBox->OnComponentEndOverlap.AddDynamic(this, &ACpp_AiCharacter_Master::OnAttackEndOverlap);
 }
 void ACpp_AiCharacter_Master::Tick(float DeltaTime)
 {
