@@ -45,11 +45,11 @@ void ACpp_AiCharacter_Master::SetupPlayerInputComponent(UInputComponent* PlayerI
 }
 
 float ACpp_AiCharacter_Master::GetHealth() const {
-
+	return Health
 }
 
 float ACpp_AiCharacter_Master::GetMaxHealth() const {
-
+	return MaxHealth;
 }
 
 void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
