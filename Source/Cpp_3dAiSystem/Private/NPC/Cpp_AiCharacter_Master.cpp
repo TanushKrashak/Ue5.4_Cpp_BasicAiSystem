@@ -90,6 +90,20 @@ float ACpp_AiCharacter_Master::GetMaxHealth() const {
 
 void ACpp_AiCharacter_Master::SetHealth(const float newHealth) {
 	Health = FMath::Clamp(newHealth, 0.0f, MaxHealth);
+	// self died
+	if (Health <= 0.0f) {
+		// check if player died, if so, close the game
+		if (Cast<ACpp_3dAiSystemCharacter>(this)) {
+			UE_LOG(LogTemp, Error, TEXT("Player Died"));
+			GetWorld()->GetFirstPlayerController()->ConsoleCommand("quit");
+		}
+		// check if NPC died
+		else if (Cast<ACpp_NPC>(this)) {
+			UE_LOG(LogTemp, Warning, TEXT("NPC Died!"));
+			Destroy();
+		}
+
+	}
 }
 
 void ACpp_AiCharacter_Master::AttackStart() {
