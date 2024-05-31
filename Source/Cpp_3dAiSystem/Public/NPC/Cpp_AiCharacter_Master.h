@@ -39,9 +39,12 @@ protected:
 	//===================================================================================================
 	UPROPERTY()
 	UWidgetComponent* WidgetComponent;
+
 	const float MaxHealth = 100.0f;
 	float Health;
-			
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision", meta = (AllowPrivateAccess = true))
+	class UBoxComponent* RightFistCollisionBox;
 
 	//===================================================================================================
 	// FUNCTIONS	

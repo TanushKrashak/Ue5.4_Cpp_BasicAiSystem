@@ -4,6 +4,7 @@
 #include "NPC/Cpp_AiCharacter_Master.h"
 #include "Components/WidgetComponent.h"
 #include "UI/Cpp_WGT_HealthBar.h"
+#include "Components/BoxComponent.h"
 
 ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 {
@@ -11,6 +12,8 @@ ACpp_AiCharacter_Master::ACpp_AiCharacter_Master()
 
 	// Set up widget component
 	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponent"));
+	// Setup Right Fist Collision Box
+	RightFistCollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("RightFistCollisionBox"));
 	Health = MaxHealth;
 
 	if (WidgetComponent) {
