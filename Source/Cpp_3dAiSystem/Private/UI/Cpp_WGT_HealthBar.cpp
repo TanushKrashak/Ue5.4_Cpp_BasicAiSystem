@@ -6,3 +6,7 @@
 void UCpp_WGT_HealthBar::NativeConstruct() {
 	Super::NativeConstruct();
 }
+
+void UCpp_WGT_HealthBar::SetHealthBarPercentage(const float Percentage) {
+	PB_HealthBar->SetPercent(Percentage);
+}
